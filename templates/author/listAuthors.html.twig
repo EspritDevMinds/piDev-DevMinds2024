@@ -1,0 +1,10 @@
+<table border="1">
+{% for i in tabAuthors %}
+<br>    
+    <tr>
+        <td>{{ i.id }}</td>
+        <td> {{ i.username|upper }}</td>
+        <td> {{ i.email }}</td>
+          </tr>
+          </br>
+{% endfor %}
