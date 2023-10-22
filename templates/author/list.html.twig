@@ -1,5 +1,4 @@
 <h1>List of Authors</h1>
-{{ variable }}
 {% set sum=0 %}
 {% if  tabAuthors is empty%}
 <h5>Tab vide</h5>
@@ -18,10 +17,9 @@
         <td> {{ i.username|upper }}</td>
         <td> {{ i.email }}</td>
         <td>{{ i.nb_books }}</td>
-        <td><a href="{{ path('app_contact') }}">Show Books +</a></td>
-        <td><a href="{{ path('author_details', {'id': i.id}) }}">Details</a></td>
-        {% set  sum = sum+i.nb_books %}
+        {% set  sum = sum + i.nb_books %}
     </tr>
+
 {% endfor %}
 </table>
 {% endif %}
