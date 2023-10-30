@@ -21,7 +21,7 @@ class BookController extends AbstractController
         ]);
     }
 
-    #[Route('/listBooks', name: 'list_book')]
+   #[Route('/listBooks', name: 'list_book')]
     public function list(BookRepository $repository)
     {
         $books = $repository->findAll();
@@ -29,20 +29,8 @@ class BookController extends AbstractController
         
         /*  return $this->render("book/list.html.twig",
             array('books'=>$repository->findBy(['published'=>false])));*/
-}
-   /* #[Route('/addb', name: 'add_books')]
-    public function addBook(ManagerRegistry $managerRegistry)
-    {
-        $book= new Book();
-        $book->setTitle("test titre");
-        $book->setPublished("test");
-        $book->setCategory("test");
-        $em= $managerRegistry->getManager();
-        $em->persist($book);
-        $em->flush();
+ }  
 
-        return $this->redirectToRoute("books");
-   } */
    #[Route('/addBook', name: 'add_book')]
    public function addBook( Request  $request,ManagerRegistry  $managerRegistry)
    {
@@ -85,6 +73,24 @@ class BookController extends AbstractController
         return $this->renderForm('book/update.html.twig',
             array('formBook'=>$form));
     }
+    #[Route("/booksByAuthors", name:"books_by_authors")]
+    public function booksByAuthors(BookRepository $bookRepository)
+    {
+        $books = $bookRepository->booksListByAuthors();
+
+        return $this->render('book/showBookAuthor.html.twig', [
+            'books' => $books,
+        ]);
+    }
+    
+#[Route('/DateBook', name: 'date_book')]
+    public function listBookDate(Request $request, BookRepository $bookrepository){
+        $books = $bookrepository->BookSortDate();
+        return $this->render('book/datebook.html.twig', [
+            'books' => $books,
+        ]);
+    }
+
     #[Route('/remove/{ref}', name: 'remove_book')]
     public function deleteBook($ref,$id, BookRepository $repository,
                                  ManagerRegistry $managerRegistry)
@@ -104,7 +110,6 @@ class BookController extends AbstractController
             return $this->redirectToRoute('show_route');
         }
         return $this->render('book/show.html.twig',['b'=>$book]);
-
 
     }
 }

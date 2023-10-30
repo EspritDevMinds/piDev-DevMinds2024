@@ -1,4 +1,9 @@
 <h1 align="center">list Book</h1>
+<form method="GET" action="{{ path('list_book') }}">
+                 <label for="ref"><h4>Search by Réf:</h4></label>
+                 <input type="text" id="ref" name="ref"/>
+                 <button type="submit">Search</button>
+           </form>
 <a href="{{ path('add_book')}}">Add Book</a>
 <table border="1" align="center">
     <tr>
@@ -36,3 +41,4 @@
 <h3>Nb_Books= {{ tabBooks|length }}</h3>
 <h3>Books Published: {{ published}} </h3>
 <h3>Books notPublished: {{ notPublished }}</h3>
+ {#<h4>Romance Books  = {{ romancebooks| length }}</h4>

@@ -1,0 +1,29 @@
+  <h1>List of Books Sorted By Date</h1>
+ <table>
+                 <tr>
+                     <th>Réf</th>
+                     <th>Title</th>
+                     <th>Published</th>
+                     <th>Publication Date</th>
+                     <th>Category</th>
+                     <th>Author</th>
+                     <th>Action</th>
+                 </tr>
+ {% for book in books %}
+                    <tr>
+                     <td>{{ book.ref }}</td>
+                     <td>{{ book.title | upper }}</td>
+                     <td>{{ book.Published }}</td>
+                     <td>{{ book.publicationDate | date }}</td>
+                     <td>{{ book.category }}</td>
+                     <td>{{ book.author }}</td>
+             <td><a href="#">Show</a>
+                 <a href="#">Update</a>
+                 <a href="#">Delete</a></td>
+                     </tr>
+                     {% else %}
+                     <h5>The table is empty</h5>
+        {% endfor %}
+       </table>
+    </div>
+</body>

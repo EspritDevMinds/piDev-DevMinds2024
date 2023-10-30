@@ -38,11 +38,23 @@ class AuthorController extends AbstractController
 
 
     #[Route('/listAuthor', name: 'authors')]
-    public function list(AuthorRepository $repository)
+    public function list(Request $request,AuthorRepository $repository)
     {
+        $minBooks = $request->query->get('min_books');
+        $maxBooks = $request->query->get('max_books');
+        if ($minBooks !== null && $maxBooks !== null) {
+            $authors = $repository->MinMaxBook($minBooks, $maxBooks);
+        }else {
         $authors = $repository->findAll();
-        return $this->render("author/listAuthors.html.twig", array( 'tabAuthors'=>$authors));
-}
+        }
+
+        return $this->render(view:"author/listAuthors.html.twig",
+            parameters: array(
+             'tabAuthors'=>$authors,
+             'minBooks' => $minBooks,
+             'maxBooks' => $maxBooks,
+        ));
+    }
 
    /* #[Route('/add', name: 'add_authors')]
     public function addAuthor(ManagerRegistry $managerRegistry)
@@ -101,7 +113,23 @@ class AuthorController extends AbstractController
         $em->flush();
         return $this->redirectToRoute("authors");
     }
+    #[Route('/listmail', name:'list_mail')]
+    public function listByMail(AuthorRepository $authorRepository ){
+        $authors= $authorRepository->listAuthorByEmail();
+        return $this->render("author/authorByEmail.html.twig", [
+            'authors' => $authors,]);
+    }
 
+    #[Route('/deletezero', name: 'deleteZero')]
+    public function DeleteAuthorsZero(AuthorRepository $authorRepository,ManagerRegistry $managerRegistry): Response
+    {
+        $deletedAuthorsCount = $authorRepository->ZeroBooks();
+        $em= $managerRegistry->getManager();
+
+        $em->flush();
+        return $this->redirectToRoute("authors");
+
+    }
     #[Route('/remove/{id}', name: 'remove_authors')]
     public function deleteAuthor(AuthorRepository $repository,$id,
                                  ManagerRegistry $managerRegistry)
