@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Offres Index{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h1 class="mb-4">Offres Index</h1>
+
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Description</th>
+                    <th>Tags</th>
+                    <th>Prix</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for offre in offres %}
+                    <tr>
+                        <td>{{ offre.id }}</td>
+                        <td>{{ offre.description }}</td>
+                        <td>{{ offre.tags }}</td>
+                        <td>{{ offre.prix }}</td>
+                        <td>
+                            <a href="{{ path('app_offres_show', {'id': offre.id}) }}" class="btn btn-info btn-sm">Show</a>
+                            <a href="{{ path('app_offres_edit', {'id': offre.id}) }}" class="btn btn-warning btn-sm">Edit</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="5">No records found</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ path('app_offres_new') }}" class="btn btn-success">Create New</a>
+    </div>
+{% endblock %}
