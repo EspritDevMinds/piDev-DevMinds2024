@@ -1,0 +1,56 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    Administration
+{% endblock %}
+
+{% block body %}
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <!-- Navbar Brand -->
+            <a class="navbar-brand" href="#">Administration</a>
+
+            <!-- Navbar Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('admin_users_list') }}">Liste des utilisateurs</a>
+                    </li>
+                    <!-- Add more navbar items here if needed -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <div class="container mt-3">
+        <div class="row">
+            <!-- Sidebar -->
+            <aside class="col-lg-3 mb-3">
+                <div class="card">
+                    <div class="card-header">
+                        Utilisateurs
+                    </div>
+                    <div class="card-body">
+                        <p><a href="{{ path('admin_users_list') }}">Liste des utilisateurs</a></p>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="col-lg-9">
+                <div class="card border border-light bg-white p-4">
+                    <h1 class="mb-4">Administration</h1>
+                    <!-- Add your administration content here -->
+                </div>
+            </main>
+        </div>
+    </div>
+{% endblock %}
+

@@ -401,6 +401,54 @@ a:focus {
   background-color: #ffffff;
   color: #000000;
 }
+.nutri_section {
+  background-image: url(../images/food.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  color: #ffffff;
+}
+.nutri_section .box {
+  margin-top: 55px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.nutri_section .box .name h5 {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.nutri_section .box .img-box {
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.nutri_section .box .img-box img {
+  width: 100%;
+}
+
+.nutri_section .box .social_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 225px;
+  padding: 12px 45px;
+  background-color: #ffffff;
+  border-radius: 50px;
+  margin-top: -25px;
+}
 
 .trainer_section {
   background-image: url(../images/trainer-bg.jpg);
@@ -408,6 +456,7 @@ a:focus {
   background-attachment: fixed;
   color: #ffffff;
 }
+
 
 .trainer_section .box {
   margin-top: 55px;

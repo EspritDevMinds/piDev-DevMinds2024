@@ -49,26 +49,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $birthday = null;
 
-    // ...
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $role;
-
-    // Autres propriétés et méthodes de l'entité User
-    public function getRole(): ?string
-    {
-        return $this->role;
-    }
-
-    public function setRole(string $role): self
-    {
-        $this->role = $role;
-
-        return $this;
-    }
-
+    #[ORM\Column(length: 255)]
+    private ?string $image = null;
     #[ORM\Column]
     private ?int $cin = null;
 
@@ -168,7 +150,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
 
     public function getFirstname(): ?string
     {

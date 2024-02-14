@@ -2,65 +2,79 @@
 
 {% block title %}Register{% endblock %}
 
+{% block stylesheets %}
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet"/>
+{% endblock %}
+
 {% block body %}
 <section class="container my-5">
     <div class="row justify-content-center">
         <div class="col-lg-6">
-            <div class="card">
-                <div class="card-body">
-                    <h1 class="card-title text-center mb-4">Register</h1>
+            <div class="border border-danger rounded p-3">
+                <h1 class="text-center mb-3 text-danger">Register</h1>
 
-                    {{ form_errors(registrationForm) }}
+                {{ form_errors(registrationForm) }}
 
-                    {{ form_start(registrationForm) }}
-                    <div class="mb-3">
-                        {{ form_row(registrationForm.email, {'attr': {'class': 'form-control', 'placeholder': 'Email'}}) }}
+                {{ form_start(registrationForm, {'attr': {'class': 'form-horizontal'}}) }}
+                <div class="row mb-3">
+                    <div class="col-sm-6">
+                        {{ form_row(registrationForm.email, {'attr': {'class': 'form-control border border-danger', 'placeholder': 'Email', 'style': 'font-family: Arial, sans-serif; font-size: 14px;' }}) }}
                     </div>
-                    <div class="mb-3">
-                        {{ form_row(registrationForm.lastname, {'attr': {'class': 'form-control', 'placeholder': 'Last Name'}}) }}
+                    <div class="col-sm-6">
+                        {{ form_row(registrationForm.lastname, {'attr': {'class': 'form-control border border-danger', 'placeholder': 'Last Name', 'style': 'font-family: Arial, sans-serif; font-size: 14px;' }}) }}
                     </div>
-                    <div class="mb-3">
-                        {{ form_row(registrationForm.firstname, {'attr': {'class': 'form-control', 'placeholder': 'First Name'}}) }}
-                    </div>
-                    <div class="mb-3">
-                        {{ form_row(registrationForm.username, {'attr': {'class': 'form-control', 'placeholder': 'Username'}}) }}
-                    </div>
-
-                    <div class="mb-3">
-                        <legend class="text mb-3">Role</legend>
-                        {{ form_row(registrationForm.role, {'attr': {'class': 'form-control'}}) }}
-                    </div>
-
-                    <div class="mb-3">
-                        <legend class="text mb-3">Mes coordonnées</legend>
-                        {{ form_row(registrationForm.cin, {'attr': {'class': 'form-control', 'placeholder': 'CIN'}}) }}
-                    </div>
-                    <div class="mb-3">
-                        {{ form_row(registrationForm.speciality, {'attr': {'class': 'form-control', 'placeholder': 'Speciality'}}) }}
-                    </div>
-                    <div class="mb-3">
-                        {{ form_row(registrationForm.city, {'attr': {'class': 'form-control', 'placeholder': 'City'}}) }}
-                    </div>
-
-                    <div class="mb-3">
-                        {{ form_row(registrationForm.birthday, {'label': 'Birthday', 'attr': {'class': 'form-control', 'placeholder': 'dd/mm/yyyy'}}) }}
-                    </div>
-
-                    <div class="mb-3">
-                        {{ form_row(registrationForm.plainPassword, {'label': 'Password', 'attr': {'class': 'form-control', 'placeholder': 'Password'}}) }}
-                    </div>
-                    <div class="mb-3 form-check">
-                        {{ form_row(registrationForm.agreeTerms, {'label': 'I Agree to all the terms of this website', 'attr': {'class': 'form-check-input'}}) }}
-                        {{ form_label(registrationForm.agreeTerms, null, {'label_attr': {'class': 'form-check-label'}}) }}
-                    </div>
-
-                    <button type="submit" class="btn btn-primary btn-lg mb-3">Register</button>
-                    <a href="{{ path('app_login') }}" class="btn btn-secondary">Me connecter</a>
-                    {{ form_end(registrationForm) }}
                 </div>
+                <div class="row mb-3">
+                    <div class="col-sm-6">
+                        {{ form_row(registrationForm.firstname, {'attr': {'class': 'form-control border border-danger', 'placeholder': 'First Name', 'style': 'font-family: Arial, sans-serif; font-size: 14px;' }}) }}
+                    </div>
+                    <div class="col-sm-6">
+                        {{ form_row(registrationForm.username, {'attr': {'class': 'form-control border border-danger', 'placeholder': 'Username', 'style': 'font-family: Arial, sans-serif; font-size: 14px;' }}) }}
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-sm-6">
+                        <legend class="text mb-3 text-danger">Role</legend>
+                        {{ form_row(registrationForm.role, {'attr': {'class': 'form-control border border-danger', 'style': 'font-family: Arial, sans-serif; font-size: 14px;' }}) }}
+                    </div>
+                    <div class="col-sm-6">
+                        <legend class="text mb-3 text-danger">Mes coordonnées</legend>
+                        {{ form_row(registrationForm.cin, {'attr': {'class': 'form-control border border-danger', 'placeholder': 'CIN', 'style': 'font-family: Arial, sans-serif; font-size: 14px;' }}) }}
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-6">
+                        {{ form_row(registrationForm.speciality, {'attr': {'class': 'form-control border border-danger', 'placeholder': 'Speciality', 'style': 'font-family: Arial, sans-serif; font-size: 14px;' }}) }}
+                    </div>
+                    <div class="col-sm-6">
+                        {{ form_row(registrationForm.city, {'attr': {'class': 'form-control border border-danger', 'placeholder': 'City', 'style': 'font-family: Arial, sans-serif; font-size: 14px;' }}) }}
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-6">
+                        {{ form_row(registrationForm.birthday, {'label': 'Birthday', 'attr': {'class': 'form-control border border-danger', 'placeholder': 'dd/mm/yyyy', 'style': 'font-family: Arial, sans-serif; font-size: 14px;' }}) }}
+                    </div>
+                    <div class="col-sm-6">
+                        {{ form_row(registrationForm.plainPassword, {'label': 'Password', 'attr': {'class': 'form-control border border-danger', 'placeholder': 'Password', 'style': 'font-family: Arial, sans-serif; font-size: 14px;' }}) }}
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-12">
+                        {{ form_row(registrationForm.agreeTerms, {'label': 'I Agree to all the terms of this website', 'attr': {'class': 'form-check-input', 'style': 'font-family: Arial, sans-serif; font-size: 14px;' }}) }}
+                        {{ form_label(registrationForm.agreeTerms, null, {'label_attr': {'class': 'form-check-label text-danger'}}) }}
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-sm-12">
+                        <button type="submit" class="btn btn-danger btn-lg mb-3">Register</button>
+                        <a href="{{ path('app_login') }}" class="btn btn-secondary">Me connecter</a>
+                    </div>
+                </div>
+                {{ form_end(registrationForm) }}
             </div>
         </div>
     </div>
 </section>
 {% endblock %}
-

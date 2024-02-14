@@ -10,10 +10,10 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/admin/utilisateurs', name: 'admin_users_')]
 class UserController extends AbstractController
 {
-    #[Route('/', name: 'index')]
+    #[Route('/', name: 'list')]
     public function index(UserRepository $usersRepository): Response
     {
         $users = $usersRepository->findBy([], ['firstname' => 'asc']);
-        return $this->render('admin/users/index.html.twig', compact('users'));
+        return $this->render('admin/users/list.html.twig', compact('users'));
     }
 }
