@@ -4,10 +4,8 @@
 
 {% block body %}
     <div class="container mt-5">
-        <h1 class="text-center mb-4">Reclamation Index</h1>
-
         <div class="table-responsive">
-            <table class="table table-bordered table-hover">
+            <table class="table table-bordered table-hover bg-white">
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">ID</th>
@@ -25,13 +23,13 @@
                         <td>{{ reclamation.textReclamation }}</td>
                         <td>{{ reclamation.dateReclamation ? reclamation.dateReclamation|date('Y-m-d') : '' }}</td>
                         <td>
-                            <a href="{{ path('app_reclamation_show', {'id': reclamation.id}) }}" class="btn btn-info btn-sm mr-1">Show</a>
-                            <a href="{{ path('app_reclamation_edit', {'id': reclamation.id}) }}" class="btn btn-primary btn-sm">Edit</a>
+                            <a href="{{ path('app_reclamation_show', {'id': reclamation.id}) }}" class="btn btn-info btn-sm mr-1">Peek</a>
+                            <a href="{{ path('app_reclamation_edit', {'id': reclamation.id}) }}" class="btn btn-primary btn-sm">Adjust</a>
                         </td>
                     </tr>
                 {% else %}
                     <tr>
-                        <td colspan="5" class="text-center">No records found</td>
+                        <td colspan="5" class="text-center">No complaints? That's a good day!</td>
                     </tr>
                 {% endfor %}
                 </tbody>
@@ -39,7 +37,7 @@
         </div>
 
         <div class="text-center mt-3">
-            <a href="{{ path('app_reclamation_new') }}" class="btn btn-success">Create New</a>
+            <a href="{{ path('app_reclamation_new') }}" class="btn btn-success">Create a New Complaint</a>
         </div>
     </div>
 {% endblock %}

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ReclamationRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -22,6 +24,14 @@ class Reclamation
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $dateReclamation = null;
+
+    #[ORM\OneToMany(targetEntity: Reponse::class, mappedBy: 'idreclamation')]
+    private Collection $reponses;
+
+    public function __construct()
+    {
+        $this->reponses = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -60,6 +70,36 @@ class Reclamation
     public function setDateReclamation(\DateTimeInterface $dateReclamation): static
     {
         $this->dateReclamation = $dateReclamation;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Reponse>
+     */
+    public function getReponses(): Collection
+    {
+        return $this->reponses;
+    }
+
+    public function addReponse(Reponse $reponse): static
+    {
+        if (!$this->reponses->contains($reponse)) {
+            $this->reponses->add($reponse);
+            $reponse->setIdreclamation($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReponse(Reponse $reponse): static
+    {
+        if ($this->reponses->removeElement($reponse)) {
+            // set the owning side to null (unless already changed)
+            if ($reponse->getIdreclamation() === $this) {
+                $reponse->setIdreclamation(null);
+            }
+        }
 
         return $this;
     }

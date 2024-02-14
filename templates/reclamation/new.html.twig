@@ -3,9 +3,9 @@
 {% block title %}New Reclamation{% endblock %}
 
 {% block body %}
+<center>
     <h1>Create new Reclamation</h1>
-
-    {{ include('reclamation/_form.html.twig') }}
-
     <a href="{{ path('app_reclamation_index') }}">back to list</a>
+</center>
+    {{ include('reclamation/_form.html.twig') }}
 {% endblock %}
