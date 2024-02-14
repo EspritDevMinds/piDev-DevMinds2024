@@ -3,9 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ReclamationRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ReclamationRepository::class)]
@@ -17,21 +16,21 @@ class Reclamation
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank]
+    #[Assert\Length(max: 255)]
     private ?string $NomUserReclamation = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank]
+    #[Assert\Length(max: 255)]
     private ?string $textReclamation = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[Assert\NotBlank]
+    #[Assert\GreaterThan("today", message:"Date should be after the current date")]
+
     private ?\DateTimeInterface $dateReclamation = null;
 
-    #[ORM\OneToMany(targetEntity: Reponse::class, mappedBy: 'idreclamation')]
-    private Collection $reponses;
-
-    public function __construct()
-    {
-        $this->reponses = new ArrayCollection();
-    }
 
     public function getId(): ?int
     {
@@ -74,32 +73,14 @@ class Reclamation
         return $this;
     }
 
-    /**
-     * @return Collection<int, Reponse>
-     */
-    public function getReponses(): Collection
+    public function getReponse(): ?Reponse
     {
-        return $this->reponses;
+        return $this->reponse;
     }
 
-    public function addReponse(Reponse $reponse): static
+    public function setReponse(?Reponse $reponse): static
     {
-        if (!$this->reponses->contains($reponse)) {
-            $this->reponses->add($reponse);
-            $reponse->setIdreclamation($this);
-        }
-
-        return $this;
-    }
-
-    public function removeReponse(Reponse $reponse): static
-    {
-        if ($this->reponses->removeElement($reponse)) {
-            // set the owning side to null (unless already changed)
-            if ($reponse->getIdreclamation() === $this) {
-                $reponse->setIdreclamation(null);
-            }
-        }
+        $this->reponse = $reponse;
 
         return $this;
     }
