@@ -6786,6 +6786,13 @@
         <argument key="loader" type="service_closure" id=".errored..service_locator.xUrKPVU.Symfony\Component\Config\Loader\LoaderInterface"/>
       </argument>
     </service>
+    <service id=".service_locator.icyBZCk" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="offresRepository" type="service_closure" id="App\Repository\OffresRepository"/>
+        <argument key="promotionRepository" type="service_closure" id="App\Repository\PromotionRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.a586ISz" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6893,9 +6900,10 @@
         <argument key="sponsor" type="service_closure" id=".errored..service_locator.Dq01r.Z.App\Entity\Sponsor"/>
       </argument>
     </service>
-    <service id=".service_locator.XRAJvy_" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.gg4B_SR" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Controller\MainController::index" type="service_closure" id=".service_locator.icyBZCk"/>
         <argument key="App\Controller\OffresBackController::delete" type="service_closure" id=".service_locator.ORQASky"/>
         <argument key="App\Controller\OffresBackController::edit" type="service_closure" id=".service_locator.ORQASky"/>
         <argument key="App\Controller\OffresBackController::index" type="service_closure" id=".service_locator.a586ISz"/>
@@ -6951,6 +6959,7 @@
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
+        <argument key="App\Controller\MainController:index" type="service_closure" id=".service_locator.icyBZCk"/>
         <argument key="App\Controller\OffresBackController:delete" type="service_closure" id=".service_locator.ORQASky"/>
         <argument key="App\Controller\OffresBackController:edit" type="service_closure" id=".service_locator.ORQASky"/>
         <argument key="App\Controller\OffresBackController:index" type="service_closure" id=".service_locator.a586ISz"/>
@@ -7700,12 +7709,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.XRAJvy_"/>
+      <argument type="service" id=".service_locator.gg4B_SR"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.XRAJvy_"/>
+      <argument type="service" id=".service_locator.gg4B_SR"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -8779,7 +8788,7 @@
     <service id="sensio_framework_extra.security.expression_language" alias="sensio_framework_extra.security.expression_language.default"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.XRAJvy_"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.gg4B_SR"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -8808,7 +8817,7 @@
     <service id=".service_locator.9m29HiH" alias=".service_locator.etz6_w_"/>
     <service id=".service_locator.Ll2SQBw" alias=".service_locator.PU8W.S9"/>
     <service id=".service_locator.36PiX.k" alias=".service_locator.Dq01r.Z"/>
-    <service id=".service_locator.4ZtOupp" alias=".service_locator.XRAJvy_"/>
+    <service id=".service_locator.fhzFTvE" alias=".service_locator.gg4B_SR"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.1Ium6lC" alias=".service_locator.c53J5Sr"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>
@@ -8836,6 +8845,7 @@
     <service id="messenger.bus.default" alias="debug.traced.messenger.bus.default"/>
     <service id="doctrine.orm.default_metadata_driver" alias=".doctrine.orm.default_metadata_driver"/>
     <service id=".service_locator.uo5c0SP" alias=".service_locator.xUrKPVU"/>
+    <service id=".service_locator.utZO4JM" alias=".service_locator.icyBZCk"/>
     <service id=".service_locator.uRMB2ls" alias=".service_locator.a586ISz"/>
     <service id=".service_locator.bInR.ll" alias=".service_locator.aKM6MDa"/>
     <service id=".service_locator.1ZHvHza" alias=".service_locator.nB8NDQM"/>

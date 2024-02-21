@@ -65,7 +65,7 @@ class __TwigTemplate_a985884a8ec439c88eaf3badc4b8be40 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Offres index";
+        echo "Offres Index";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -85,75 +85,77 @@ class __TwigTemplate_a985884a8ec439c88eaf3badc4b8be40 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Offres index</h1>
+        echo "    <div class=\"container mt-5\">
+        <h1 class=\"mb-4\">Offres Index</h1>
 
-    <table class=\"table\">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Description</th>
-                <th>Tags</th>
-                <th>Prix</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        ";
-        // line 19
+        <table class=\"table table-dark\">
+            <thead class=\"thead-dark\">
+                <tr>
+                    <th scope=\"col\">Id</th>
+                    <th scope=\"col\">Description</th>
+                    <th scope=\"col\">Tags</th>
+                    <th scope=\"col\">Prix</th>
+                    <th scope=\"col\">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            ";
+        // line 20
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["offres"]) || array_key_exists("offres", $context) ? $context["offres"] : (function () { throw new RuntimeError('Variable "offres" does not exist.', 19, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["offres"]) || array_key_exists("offres", $context) ? $context["offres"] : (function () { throw new RuntimeError('Variable "offres" does not exist.', 20, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["offre"]) {
-            // line 20
-            echo "            <tr>
-                <td>";
             // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offre"], "id", [], "any", false, false, false, 21), "html", null, true);
-            echo "</td>
-                <td>";
+            echo "                <tr>
+                    <td>";
             // line 22
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offre"], "description", [], "any", false, false, false, 22), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offre"], "id", [], "any", false, false, false, 22), "html", null, true);
             echo "</td>
-                <td>";
+                    <td>";
             // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offre"], "tags", [], "any", false, false, false, 23), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offre"], "description", [], "any", false, false, false, 23), "html", null, true);
             echo "</td>
-                <td>";
+                    <td>";
             // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offre"], "prix", [], "any", false, false, false, 24), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offre"], "tags", [], "any", false, false, false, 24), "html", null, true);
             echo "</td>
-                <td>
-                    <a href=\"";
-            // line 26
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_offres_show", ["id" => twig_get_attribute($this->env, $this->source, $context["offre"], "id", [], "any", false, false, false, 26)]), "html", null, true);
-            echo "\">show</a>
-                    <a href=\"";
+                    <td>";
+            // line 25
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offre"], "prix", [], "any", false, false, false, 25), "html", null, true);
+            echo "</td>
+                    <td>
+                        <a href=\"";
             // line 27
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_offres_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["offre"], "id", [], "any", false, false, false, 27)]), "html", null, true);
-            echo "\">edit</a>
-                </td>
-            </tr>
-        ";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_offres_show", ["id" => twig_get_attribute($this->env, $this->source, $context["offre"], "id", [], "any", false, false, false, 27)]), "html", null, true);
+            echo "\" class=\"btn btn-info btn-sm\">Show</a>
+                        <a href=\"";
+            // line 28
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_offres_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["offre"], "id", [], "any", false, false, false, 28)]), "html", null, true);
+            echo "\" class=\"btn btn-warning btn-sm\">Edit</a>
+                    </td>
+                </tr>
+            ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 31
-            echo "            <tr>
-                <td colspan=\"5\">no records found</td>
-            </tr>
-        ";
+            // line 32
+            echo "                <tr>
+                    <td colspan=\"5\">No records found</td>
+                </tr>
+            ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['offre'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 35
-        echo "        </tbody>
-    </table>
+        // line 36
+        echo "            </tbody>
+        </table>
 
-    <a href=\"";
-        // line 38
+        <a href=\"";
+        // line 39
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_offres_new");
-        echo "\">Create new</a>
+        echo "\" class=\"btn btn-success\">Create New</a>
+    </div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -184,49 +186,51 @@ class __TwigTemplate_a985884a8ec439c88eaf3badc4b8be40 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  155 => 38,  150 => 35,  141 => 31,  132 => 27,  128 => 26,  123 => 24,  119 => 23,  115 => 22,  111 => 21,  108 => 20,  103 => 19,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  156 => 39,  151 => 36,  142 => 32,  133 => 28,  129 => 27,  124 => 25,  120 => 24,  116 => 23,  112 => 22,  109 => 21,  104 => 20,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Offres index{% endblock %}
+{% block title %}Offres Index{% endblock %}
 
 {% block body %}
-    <h1>Offres index</h1>
+    <div class=\"container mt-5\">
+        <h1 class=\"mb-4\">Offres Index</h1>
 
-    <table class=\"table\">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Description</th>
-                <th>Tags</th>
-                <th>Prix</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for offre in offres %}
-            <tr>
-                <td>{{ offre.id }}</td>
-                <td>{{ offre.description }}</td>
-                <td>{{ offre.tags }}</td>
-                <td>{{ offre.prix }}</td>
-                <td>
-                    <a href=\"{{ path('app_offres_show', {'id': offre.id}) }}\">show</a>
-                    <a href=\"{{ path('app_offres_edit', {'id': offre.id}) }}\">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan=\"5\">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <table class=\"table table-dark\">
+            <thead class=\"thead-dark\">
+                <tr>
+                    <th scope=\"col\">Id</th>
+                    <th scope=\"col\">Description</th>
+                    <th scope=\"col\">Tags</th>
+                    <th scope=\"col\">Prix</th>
+                    <th scope=\"col\">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for offre in offres %}
+                <tr>
+                    <td>{{ offre.id }}</td>
+                    <td>{{ offre.description }}</td>
+                    <td>{{ offre.tags }}</td>
+                    <td>{{ offre.prix }}</td>
+                    <td>
+                        <a href=\"{{ path('app_offres_show', {'id': offre.id}) }}\" class=\"btn btn-info btn-sm\">Show</a>
+                        <a href=\"{{ path('app_offres_edit', {'id': offre.id}) }}\" class=\"btn btn-warning btn-sm\">Edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan=\"5\">No records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 
-    <a href=\"{{ path('app_offres_new') }}\">Create new</a>
+        <a href=\"{{ path('app_offres_new') }}\" class=\"btn btn-success\">Create New</a>
+    </div>
 {% endblock %}
 ", "offres/index.html.twig", "C:\\Users\\fujit\\OneDrive\\Bureau\\PiDev-DevMinds2024-main\\templates\\offres\\index.html.twig");
     }

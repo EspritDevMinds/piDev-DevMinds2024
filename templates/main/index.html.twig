@@ -267,88 +267,63 @@
 
     <!-- end heathy section -->
 
-    <!-- trainer section -->
-
-    <section class="trainer_section layout_padding">
-        <div class="container">
-            <div class="heading_container">
-                <h2>
-                    Our Gym Trainers
-                </h2>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mx-auto">
-                    <div class="box">
-                        <div class="name">
-                            <h5>
-                                Smirth Jon
-                            </h5>
-                        </div>
-                        <div class="img-box">
-                            <img src="{{ asset('./FrontOffice/images/t1.jpg') }}" alt="">
-                        </div>
-                        <div class="social_box">
-                            <a href="">
-                                <img src="{{ asset('./FrontOffice/images/facebook-logo.png') }}" alt="">
-                            </a>
-                            <a href="">
-                                <img src="{{ asset('./FrontOffice/images/twitter.png') }}" alt="">
-                            </a>
-                            <a href="">
-                                <img src="{{ asset('./FrontOffice/images/instagram-logo.png') }}" alt="">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mx-auto">
-                    <div class="box">
-                        <div class="name">
-                            <h5>
-                                Jean Doe
-                            </h5>
-                        </div>
-                        <div class="img-box">
-                            <img src="{{ asset('./FrontOffice/images/t2.jpg') }}" alt="">
-                        </div>
-                        <div class="social_box">
-                            <a href="">
-                                <img src="{{ asset('./FrontOffice/images/facebook-logo.png')}}" alt="">
-                            </a>
-                            <a href="">
-                                <img src="{{ asset('./FrontOffice/images/twitter.png')}}" alt="">
-                            </a>
-                            <a href="">
-                                <img src="{{ asset('./FrontOffice/images/instagram-logo.png')}}" alt="">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mx-auto">
-                    <div class="box">
-                        <div class="name">
-                            <h5>
-                                Alex Den
-                            </h5>
-                        </div>
-                        <div class="img-box">
-                            <img src="{{ asset('./FrontOffice/images/t3.jpg') }}" alt="">
-                        </div>
-                        <div class="social_box">
-                            <a href="">
-                                <img src="{{ asset('./FrontOffice/images/facebook-logo.png') }}" alt="">
-                            </a>
-                            <a href="">
-                                <img src="{{ asset('./FrontOffice/images/twitter.png') }}" alt="">
-                            </a>
-                            <a href="">
-                                <img src="{{ asset('./FrontOffice/images/instagram-logo.png') }}" alt="">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!-- trainer section -->
+<section class="trainer_section layout_padding bg-dark text-white">
+    <div class="container">
+        <div class="heading_container text-center">
+            <h2 class="text-white">
+                Our Latest Offers
+            </h2>
         </div>
-    </section>
+        <div class="row">
+            {% for offre in offres %}
+            <div class="col-lg-4 col-md-6 mx-auto">
+                <div class="card bg-secondary text-white mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ offre.description }}</h5>
+                        <p class="card-text">Tags: {{ offre.tags }}</p>
+                        <p class="card-text">Price: ${{ offre.prix }}</p>
+                        <a href="{{ path('app_offres_show', {'id': offre.id}) }}">show</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="promotion_section layout_padding bg-dark text-white">
+    <div class="container">
+        <div class="heading_container text-center">
+            <h2 class="text-white">
+                Our Latest Promotions
+            </h2>
+        </div>
+        <div class="row">
+            {% if promotions is empty %}
+                <p class="text-white">No promotions available at the moment.</p>
+            {% else %}
+                {% for promotion in promotions %}
+                <div class="col-lg-4 col-md-6 mx-auto">
+                    <div class="card bg-secondary text-white mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Code: {{ promotion.codePromotion }}</h5>
+                            <p class="card-text">Reduction: {{ promotion.reductionPromotion }}%</p>
+                            <p class="card-text">Expiration: {{ promotion.dateExpiration|date('Y-m-d') }}</p>
+                            {# Assuming you have a route named 'promotion_show' for showing promotion details #}
+                            <a href="{{ path('app_promotion_show', {'id': promotion.id}) }}">Details</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+
+
+
 
     <!-- end trainer section -->
     <!-- Nutritionist section -->

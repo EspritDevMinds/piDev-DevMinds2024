@@ -360,124 +360,113 @@ class __TwigTemplate_219436da9097e821c7df905c388e267d extends Template
 
     <!-- end heathy section -->
 
-    <!-- trainer section -->
-
-    <section class=\"trainer_section layout_padding\">
-        <div class=\"container\">
-            <div class=\"heading_container\">
-                <h2>
-                    Our Gym Trainers
-                </h2>
-            </div>
-            <div class=\"row\">
-                <div class=\"col-lg-4 col-md-6 mx-auto\">
-                    <div class=\"box\">
-                        <div class=\"name\">
-                            <h5>
-                                Smirth Jon
-                            </h5>
-                        </div>
-                        <div class=\"img-box\">
-                            <img src=\"";
-        // line 288
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/t1.jpg"), "html", null, true);
-        echo "\" alt=\"\">
-                        </div>
-                        <div class=\"social_box\">
-                            <a href=\"\">
-                                <img src=\"";
-        // line 292
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/facebook-logo.png"), "html", null, true);
-        echo "\" alt=\"\">
-                            </a>
-                            <a href=\"\">
-                                <img src=\"";
-        // line 295
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/twitter.png"), "html", null, true);
-        echo "\" alt=\"\">
-                            </a>
-                            <a href=\"\">
-                                <img src=\"";
-        // line 298
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/instagram-logo.png"), "html", null, true);
-        echo "\" alt=\"\">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class=\"col-lg-4 col-md-6 mx-auto\">
-                    <div class=\"box\">
-                        <div class=\"name\">
-                            <h5>
-                                Jean Doe
-                            </h5>
-                        </div>
-                        <div class=\"img-box\">
-                            <img src=\"";
-        // line 311
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/t2.jpg"), "html", null, true);
-        echo "\" alt=\"\">
-                        </div>
-                        <div class=\"social_box\">
-                            <a href=\"\">
-                                <img src=\"";
-        // line 315
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/facebook-logo.png"), "html", null, true);
-        echo "\" alt=\"\">
-                            </a>
-                            <a href=\"\">
-                                <img src=\"";
-        // line 318
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/twitter.png"), "html", null, true);
-        echo "\" alt=\"\">
-                            </a>
-                            <a href=\"\">
-                                <img src=\"";
-        // line 321
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/instagram-logo.png"), "html", null, true);
-        echo "\" alt=\"\">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class=\"col-lg-4 col-md-6 mx-auto\">
-                    <div class=\"box\">
-                        <div class=\"name\">
-                            <h5>
-                                Alex Den
-                            </h5>
-                        </div>
-                        <div class=\"img-box\">
-                            <img src=\"";
-        // line 334
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/t3.jpg"), "html", null, true);
-        echo "\" alt=\"\">
-                        </div>
-                        <div class=\"social_box\">
-                            <a href=\"\">
-                                <img src=\"";
-        // line 338
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/facebook-logo.png"), "html", null, true);
-        echo "\" alt=\"\">
-                            </a>
-                            <a href=\"\">
-                                <img src=\"";
-        // line 341
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/twitter.png"), "html", null, true);
-        echo "\" alt=\"\">
-                            </a>
-                            <a href=\"\">
-                                <img src=\"";
-        // line 344
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/instagram-logo.png"), "html", null, true);
-        echo "\" alt=\"\">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!-- trainer section -->
+<section class=\"trainer_section layout_padding bg-dark text-white\">
+    <div class=\"container\">
+        <div class=\"heading_container text-center\">
+            <h2 class=\"text-white\">
+                Our Latest Offers
+            </h2>
         </div>
-    </section>
+        <div class=\"row\">
+            ";
+        // line 279
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["offres"]) || array_key_exists("offres", $context) ? $context["offres"] : (function () { throw new RuntimeError('Variable "offres" does not exist.', 279, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["offre"]) {
+            // line 280
+            echo "            <div class=\"col-lg-4 col-md-6 mx-auto\">
+                <div class=\"card bg-secondary text-white mb-4\">
+                    <div class=\"card-body\">
+                        <h5 class=\"card-title\">";
+            // line 283
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offre"], "description", [], "any", false, false, false, 283), "html", null, true);
+            echo "</h5>
+                        <p class=\"card-text\">Tags: ";
+            // line 284
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offre"], "tags", [], "any", false, false, false, 284), "html", null, true);
+            echo "</p>
+                        <p class=\"card-text\">Price: \$";
+            // line 285
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["offre"], "prix", [], "any", false, false, false, 285), "html", null, true);
+            echo "</p>
+                        <a href=\"";
+            // line 286
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_offres_show", ["id" => twig_get_attribute($this->env, $this->source, $context["offre"], "id", [], "any", false, false, false, 286)]), "html", null, true);
+            echo "\">show</a>
+                    </div>
+                </div>
+            </div>
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['offre'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 291
+        echo "        </div>
+    </div>
+</section>
+
+<section class=\"promotion_section layout_padding bg-dark text-white\">
+    <div class=\"container\">
+        <div class=\"heading_container text-center\">
+            <h2 class=\"text-white\">
+                Our Latest Promotions
+            </h2>
+        </div>
+        <div class=\"row\">
+            ";
+        // line 303
+        if (twig_test_empty((isset($context["promotions"]) || array_key_exists("promotions", $context) ? $context["promotions"] : (function () { throw new RuntimeError('Variable "promotions" does not exist.', 303, $this->source); })()))) {
+            // line 304
+            echo "                <p class=\"text-white\">No promotions available at the moment.</p>
+            ";
+        } else {
+            // line 306
+            echo "                ";
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["promotions"]) || array_key_exists("promotions", $context) ? $context["promotions"] : (function () { throw new RuntimeError('Variable "promotions" does not exist.', 306, $this->source); })()));
+            foreach ($context['_seq'] as $context["_key"] => $context["promotion"]) {
+                // line 307
+                echo "                <div class=\"col-lg-4 col-md-6 mx-auto\">
+                    <div class=\"card bg-secondary text-white mb-4\">
+                        <div class=\"card-body\">
+                            <h5 class=\"card-title\">Code: ";
+                // line 310
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["promotion"], "codePromotion", [], "any", false, false, false, 310), "html", null, true);
+                echo "</h5>
+                            <p class=\"card-text\">Reduction: ";
+                // line 311
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["promotion"], "reductionPromotion", [], "any", false, false, false, 311), "html", null, true);
+                echo "%</p>
+                            <p class=\"card-text\">Expiration: ";
+                // line 312
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["promotion"], "dateExpiration", [], "any", false, false, false, 312), "Y-m-d"), "html", null, true);
+                echo "</p>
+                            ";
+                // line 314
+                echo "                            <a href=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_promotion_show", ["id" => twig_get_attribute($this->env, $this->source, $context["promotion"], "id", [], "any", false, false, false, 314)]), "html", null, true);
+                echo "\">Details</a>
+                        </div>
+                    </div>
+                </div>
+                ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['promotion'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 319
+            echo "            ";
+        }
+        // line 320
+        echo "        </div>
+    </div>
+</section>
+
+
+
+
 
     <!-- end trainer section -->
     <!-- Nutritionist section -->
@@ -499,26 +488,26 @@ class __TwigTemplate_219436da9097e821c7df905c388e267d extends Template
                         </div>
                         <div class=\"img-box\">
                             <img src=\"";
-        // line 372
+        // line 347
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/nut1.jpg"), "html", null, true);
         echo "\" alt=\"\">
                         </div>
                         <div class=\"social_box\">
                             <a href=\"\">
                                 <img src=\"";
-        // line 376
+        // line 351
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/facebook-logo.png"), "html", null, true);
         echo "\" alt=\"\">
                             </a>
                             <a href=\"\">
                                 <img src=\"";
-        // line 379
+        // line 354
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/twitter.png"), "html", null, true);
         echo "\" alt=\"\">
                             </a>
                             <a href=\"\">
                                 <img src=\"";
-        // line 382
+        // line 357
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/instagram-logo.png"), "html", null, true);
         echo "\" alt=\"\">
                             </a>
@@ -535,26 +524,26 @@ class __TwigTemplate_219436da9097e821c7df905c388e267d extends Template
                         </div>
                         <div class=\"img-box\">
                             <img src=\"";
-        // line 396
+        // line 371
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/nut2.jpg"), "html", null, true);
         echo "\" alt=\"\">
                         </div>
                         <div class=\"social_box\">
                             <a href=\"\">
                                 <img src=\"";
-        // line 400
+        // line 375
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/facebook-logo.png"), "html", null, true);
         echo "\" alt=\"\">
                             </a>
                             <a href=\"\">
                                 <img src=\"";
-        // line 403
+        // line 378
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/twitter.png"), "html", null, true);
         echo "\" alt=\"\">
                             </a>
                             <a href=\"\">
                                 <img src=\"";
-        // line 406
+        // line 381
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/instagram-logo.png"), "html", null, true);
         echo "\" alt=\"\">
                             </a>
@@ -571,26 +560,26 @@ class __TwigTemplate_219436da9097e821c7df905c388e267d extends Template
                         </div>
                         <div class=\"img-box\">
                             <img src=\"";
-        // line 420
+        // line 395
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/nut3.webp"), "html", null, true);
         echo "\" alt=\"\">
                         </div>
                         <div class=\"social_box\">
                             <a href=\"\">
                                 <img src=\"";
-        // line 424
+        // line 399
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/facebook-logo.png"), "html", null, true);
         echo "\" alt=\"\">
                             </a>
                             <a href=\"\">
                                 <img src=\"";
-        // line 427
+        // line 402
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/twitter.png"), "html", null, true);
         echo "\" alt=\"\">
                             </a>
                             <a href=\"\">
                                 <img src=\"";
-        // line 430
+        // line 405
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/instagram-logo.png"), "html", null, true);
         echo "\" alt=\"\">
                             </a>
@@ -609,7 +598,7 @@ class __TwigTemplate_219436da9097e821c7df905c388e267d extends Template
                 <div class=\"col-md-6 px-0\">
                     <div class=\"img-box\">
                         <img src=\"";
-        // line 446
+        // line 421
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/images/contact-img.jpg"), "html", null, true);
         echo "\" alt=\"\">
                     </div>
@@ -703,11 +692,11 @@ class __TwigTemplate_219436da9097e821c7df905c388e267d extends Template
 
 
     <script src=\"";
-        // line 537
+        // line 512
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/js/jquery-3.4.1.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 538
+        // line 513
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./FrontOffice/js/bootstrap.js"), "html", null, true);
         echo "\"></script>
 
@@ -743,7 +732,7 @@ class __TwigTemplate_219436da9097e821c7df905c388e267d extends Template
      */
     public function getDebugInfo()
     {
-        return array (  711 => 538,  707 => 537,  613 => 446,  594 => 430,  588 => 427,  582 => 424,  575 => 420,  558 => 406,  552 => 403,  546 => 400,  539 => 396,  522 => 382,  516 => 379,  510 => 376,  503 => 372,  472 => 344,  466 => 341,  460 => 338,  453 => 334,  437 => 321,  431 => 318,  425 => 315,  418 => 311,  402 => 298,  396 => 295,  390 => 292,  383 => 288,  314 => 222,  296 => 207,  278 => 192,  260 => 177,  87 => 6,  77 => 5,  59 => 3,  36 => 1,);
+        return array (  700 => 513,  696 => 512,  602 => 421,  583 => 405,  577 => 402,  571 => 399,  564 => 395,  547 => 381,  541 => 378,  535 => 375,  528 => 371,  511 => 357,  505 => 354,  499 => 351,  492 => 347,  463 => 320,  460 => 319,  448 => 314,  444 => 312,  440 => 311,  436 => 310,  431 => 307,  426 => 306,  422 => 304,  420 => 303,  406 => 291,  395 => 286,  391 => 285,  387 => 284,  383 => 283,  378 => 280,  374 => 279,  314 => 222,  296 => 207,  278 => 192,  260 => 177,  87 => 6,  77 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -1017,88 +1006,63 @@ class __TwigTemplate_219436da9097e821c7df905c388e267d extends Template
 
     <!-- end heathy section -->
 
-    <!-- trainer section -->
-
-    <section class=\"trainer_section layout_padding\">
-        <div class=\"container\">
-            <div class=\"heading_container\">
-                <h2>
-                    Our Gym Trainers
-                </h2>
-            </div>
-            <div class=\"row\">
-                <div class=\"col-lg-4 col-md-6 mx-auto\">
-                    <div class=\"box\">
-                        <div class=\"name\">
-                            <h5>
-                                Smirth Jon
-                            </h5>
-                        </div>
-                        <div class=\"img-box\">
-                            <img src=\"{{ asset('./FrontOffice/images/t1.jpg') }}\" alt=\"\">
-                        </div>
-                        <div class=\"social_box\">
-                            <a href=\"\">
-                                <img src=\"{{ asset('./FrontOffice/images/facebook-logo.png') }}\" alt=\"\">
-                            </a>
-                            <a href=\"\">
-                                <img src=\"{{ asset('./FrontOffice/images/twitter.png') }}\" alt=\"\">
-                            </a>
-                            <a href=\"\">
-                                <img src=\"{{ asset('./FrontOffice/images/instagram-logo.png') }}\" alt=\"\">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class=\"col-lg-4 col-md-6 mx-auto\">
-                    <div class=\"box\">
-                        <div class=\"name\">
-                            <h5>
-                                Jean Doe
-                            </h5>
-                        </div>
-                        <div class=\"img-box\">
-                            <img src=\"{{ asset('./FrontOffice/images/t2.jpg') }}\" alt=\"\">
-                        </div>
-                        <div class=\"social_box\">
-                            <a href=\"\">
-                                <img src=\"{{ asset('./FrontOffice/images/facebook-logo.png')}}\" alt=\"\">
-                            </a>
-                            <a href=\"\">
-                                <img src=\"{{ asset('./FrontOffice/images/twitter.png')}}\" alt=\"\">
-                            </a>
-                            <a href=\"\">
-                                <img src=\"{{ asset('./FrontOffice/images/instagram-logo.png')}}\" alt=\"\">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class=\"col-lg-4 col-md-6 mx-auto\">
-                    <div class=\"box\">
-                        <div class=\"name\">
-                            <h5>
-                                Alex Den
-                            </h5>
-                        </div>
-                        <div class=\"img-box\">
-                            <img src=\"{{ asset('./FrontOffice/images/t3.jpg') }}\" alt=\"\">
-                        </div>
-                        <div class=\"social_box\">
-                            <a href=\"\">
-                                <img src=\"{{ asset('./FrontOffice/images/facebook-logo.png') }}\" alt=\"\">
-                            </a>
-                            <a href=\"\">
-                                <img src=\"{{ asset('./FrontOffice/images/twitter.png') }}\" alt=\"\">
-                            </a>
-                            <a href=\"\">
-                                <img src=\"{{ asset('./FrontOffice/images/instagram-logo.png') }}\" alt=\"\">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!-- trainer section -->
+<section class=\"trainer_section layout_padding bg-dark text-white\">
+    <div class=\"container\">
+        <div class=\"heading_container text-center\">
+            <h2 class=\"text-white\">
+                Our Latest Offers
+            </h2>
         </div>
-    </section>
+        <div class=\"row\">
+            {% for offre in offres %}
+            <div class=\"col-lg-4 col-md-6 mx-auto\">
+                <div class=\"card bg-secondary text-white mb-4\">
+                    <div class=\"card-body\">
+                        <h5 class=\"card-title\">{{ offre.description }}</h5>
+                        <p class=\"card-text\">Tags: {{ offre.tags }}</p>
+                        <p class=\"card-text\">Price: \${{ offre.prix }}</p>
+                        <a href=\"{{ path('app_offres_show', {'id': offre.id}) }}\">show</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class=\"promotion_section layout_padding bg-dark text-white\">
+    <div class=\"container\">
+        <div class=\"heading_container text-center\">
+            <h2 class=\"text-white\">
+                Our Latest Promotions
+            </h2>
+        </div>
+        <div class=\"row\">
+            {% if promotions is empty %}
+                <p class=\"text-white\">No promotions available at the moment.</p>
+            {% else %}
+                {% for promotion in promotions %}
+                <div class=\"col-lg-4 col-md-6 mx-auto\">
+                    <div class=\"card bg-secondary text-white mb-4\">
+                        <div class=\"card-body\">
+                            <h5 class=\"card-title\">Code: {{ promotion.codePromotion }}</h5>
+                            <p class=\"card-text\">Reduction: {{ promotion.reductionPromotion }}%</p>
+                            <p class=\"card-text\">Expiration: {{ promotion.dateExpiration|date('Y-m-d') }}</p>
+                            {# Assuming you have a route named 'promotion_show' for showing promotion details #}
+                            <a href=\"{{ path('app_promotion_show', {'id': promotion.id}) }}\">Details</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+
+
+
 
     <!-- end trainer section -->
     <!-- Nutritionist section -->
