@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\OffresRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: OffresRepository::class)]
 class Offres
@@ -13,13 +14,18 @@ class Offres
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Assert\NotBlank]
+    #[Assert\Length(max: 255)]
     #[ORM\Column(length: 255)]
     private ?string $description = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank]
+    #[Assert\Length(max: 10)]
     private ?string $tags = null;
 
     #[ORM\Column]
+    #[Assert\Positive]
     private ?float $prix = null;
 
     public function getId(): ?int

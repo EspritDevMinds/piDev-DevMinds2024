@@ -33,59 +33,55 @@
 		<link href="{{ asset('css/responsive.css') }}" rel="stylesheet"/>
 	</head>
 	<body>
-<div class="hero_area">
+		<div class="hero_area">
 
-		<header class="header_section">
-			<div class="container-fluid">
-				<nav class="navbar navbar-expand-lg custom_nav-container ">
-					<a class="navbar-brand" href="">
-						<span>
-							Neogym
-						</span>
-					</a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
-					</button>
+			<header class="header_section">
+				<div class="container-fluid">
+					<nav class="navbar navbar-expand-lg custom_nav-container ">
+						<a class="navbar-brand" href="">
+							<span>
+								Neogym
+							</span>
+						</a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
 
-					<div class="collapse navbar-collapse" id="navbarSupportedContent">
-						<div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
-							<ul class="navbar-nav  ">
-								<li class="nav-item active">
-									<a class="nav-link" href="">Home
-									</a>
+						<div class="collapse navbar-collapse" id="navbarSupportedContent">
+							<div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+								<ul class="navbar-nav  ">
+									<li class="nav-item active">
+										<a class="nav-link" href="">Home
+										</a>
+									</li>
+									<li class="nav-item ">
+										<a class="nav-link" href="{{ path('app_reclamation_index') }}">
+											Reclamation
+										</a>
+									</li>
 								</li>
-								<li class="nav-item ">
-									<a class="nav-link" href="{{ path('app_reclamation_index') }}">
-										Reclamation
-									</a>
+								<li class="nav-item">
+									<a class="nav-link" href="{{ path('app_reponse_index') }}">
+										Reponse</a>
 								</li>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link"  href="{{ path('app_reponse_index') }}">
-									Reponse</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="">
-									Contact Us</a>
-							</li>
-						</ul>
-						<div class="user_option">
-							<form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
-								<button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
-							</form>
+								<li class="nav-item">
+									<a class="nav-link" href="{{ path('app_offres_index') }}">
+										Offres</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="">
+										Contact Us</a>
+								</li>
+							</ul>
+							<div class="user_option">
+								<form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
+									<button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
+								</form>
+							</div>
 						</div>
 					</div>
-				</div>
-			</nav>
-		</div>
+				</nav>
+			</div>
+		</body>
 	</body>
-</html>
-</header>
-
-{% block body %}
-
-{% endblock %}
-
-<script src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
-<script src="{{ asset('js/bootstrap.js') }}"></script>
-</html>
+</html></header>{% block body %}{% endblock %}<script src="{{ asset('js/jquery-3.4.1.min.js') }}"></script><script src="{{ asset('js/bootstrap.js') }}"></script></html>
